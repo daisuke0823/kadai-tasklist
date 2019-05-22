@@ -51,7 +51,11 @@ class TasksController extends Controller
     // getでtasks/id/editにアクセスされた場合の「更新画面表示処理」
     public function edit($id)
     {
-        //
+        $task = Task::find($id);
+
+        return view('tasks.edit', [
+            'task' => $task,
+        ]);
     }
 
     // putまたはpatchでmessages/idにアクセスされた場合の「更新処理」
